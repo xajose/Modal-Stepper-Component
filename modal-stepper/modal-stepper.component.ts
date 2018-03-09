@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ModalStepper } from '../common/modal-stepper.model';
 
 @Component({
@@ -7,15 +7,11 @@ import { ModalStepper } from '../common/modal-stepper.model';
   styleUrls: ['./modal-stepper.component.scss']
 })
 
-export class ModalStepperComponent implements OnInit {
+export class ModalStepperComponent {
 
   // Model containing the list to display and the selected index
   @Input() modalStepper: ModalStepper;
 
   constructor() {
   }
-
-  ngOnInit() {
-  }
-
 }
