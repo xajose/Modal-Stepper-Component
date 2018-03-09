@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="wrapper">
+    <div class="stepper">
+      <span *ngFor="let item of modalStepper.items; let i = index">
+        <div [ngClass]="{'stepper-item': true, 'step-complete': (i <= modalStepper.selectedIndex)  }">
+          <i class="stepper-circle">
+            <div *ngIf="(i >= modalStepper.selectedIndex)">{{i + 1}}</div>
+            <div *ngIf="(i < modalStepper.selectedIndex)" class="checkmark"></div>
+          </i>
+          <h4 [ngClass]="(i <= modalStepper.selectedIndex)? 'active' : 'normal'">{{item | uppercase}}</h4>
+        </div>
+        <div *ngIf="( i < modalStepper.items.length - 1)" [ngClass]="(i < modalStepper.selectedIndex) ? 'stepper-connector-active' : 'stepper-connector-normal'"
+          aria-hidden=true>
+          <hr>
+        </div>
+      </span>
+    </div>
+  </div>
+</div>

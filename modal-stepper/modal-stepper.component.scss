@@ -1,0 +1,94 @@
+$circleSize: 24px;
+// circle and label wrapper
+$stepperItemWidth: $circleSize + 111px;
+$connectorPullIn: 3.2em;
+.wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+    text-align: center;
+    height: 140px;
+    line-height: 3;
+    -webkit-box-shadow: 0px 2px 5px 0px #9E9E9E;
+    -moz-box-shadow: 0px 2px 5px 0px #9E9E9E;
+    box-shadow: 0px 2px 5px 0px #9E9E9E;
+}
+
+.stepper {
+    display: table;
+    width: 100%;
+    position: relative;
+    .active {
+        color: #333333;
+    }
+    .normal {
+        color: #9E9E9E;
+    }
+    .stepper-item,
+    .stepper-connector-active,
+    .stepper-connector-normal {
+        display: table-cell;
+    }
+    .stepper-item {
+        width: $stepperItemWidth;
+        text-align: center;
+        &.step-complete {
+            .stepper-circle {
+                background-color: #0091EA;
+            }
+        }
+    }
+    .stepper-connector-normal {
+        hr {
+            height: 2px;
+            margin: 0 -#{$connectorPullIn};
+            transform: translateY(-0.2em);
+            color: #dfdfdf;
+            background-color: #dfdfdf;
+            border: none;
+        }
+    }
+    .stepper-connector-active {
+        hr {
+            height: 2px;
+            margin: 0 -#{$connectorPullIn};
+            transform: translateY(-0.2em);
+            color: #333333;
+            background-color: #333333;
+            border: none;
+        }
+    }
+    @media(min-width: 600px) {
+        .stepper-item {
+            position: relative;
+            .stepper-label {
+                display: inline-block;
+            }
+        }
+    }
+}
+
+.stepper-circle {
+    width: $circleSize;
+    height: $circleSize;
+    display: inline-block;
+    font-weight: bold;
+    font-style: normal;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+    background-color: #9E9E9E;
+    border-radius: 50%;
+}
+
+.checkmark {
+    display: inline-block;
+    &:after {
+        content: '';
+        display: block;
+        width: 6px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
+}
